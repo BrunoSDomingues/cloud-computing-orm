@@ -18,12 +18,19 @@ class AWSDelete(AWSDefault):
             # Checks if describe has values
             if len(describe_auto["AutoScalingGroups"]) != 0:
                 # Deletes values
-                describe_auto = self.autoscaling.delete_auto_scaling_group(
+                delete_auto = self.autoscaling.delete_auto_scaling_group(
                     AutoScalingGroupName=auto_name, ForceDelete=True
                 )
 
                 # Checks if there are new values, if there are, wait
-                while len(describe_auto["AutoScalingGroups"]) != 0:
+                while (
+                    len(
+                        self.autoscaling.describe_auto_scaling_group(
+                            AutoScalingGroupNames=[auto_name]
+                        )["AutoScalingGroups"]
+                    )
+                    != 0
+                ):
                     self.stopwatch(10)
 
                 print(f"Autoscaling {auto_name} has been deleted successfully.")
