@@ -18,7 +18,7 @@ class AWSDelete(AWSDefault):
             # Checks if describe has values
             if len(describe_auto["AutoScalingGroups"]) != 0:
                 # Deletes values
-                delete_auto = self.autoscaling.delete_auto_scaling_group(
+                describe_auto = self.autoscaling.delete_auto_scaling_group(
                     AutoScalingGroupName=auto_name, ForceDelete=True
                 )
 
