@@ -41,7 +41,7 @@ while True:
             print(f"\nResponse: {requests.get(url + '/get_tasks').text}")
 
         if action == 3:
-            print(f"\nResponse: {requests.get(url + '/delete_tasks').text}")
+            print(f"\nResponse: {requests.delete(url + '/delete_tasks').text}")
 
     except ValueError:
         print("INVALID ACTION")
