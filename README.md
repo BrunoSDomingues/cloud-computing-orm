@@ -6,7 +6,7 @@ Python program used to create a simple task manager that resides in AWS.
 - Usage of tags in order to filter more efficiently
 - Usage of autoscaling and load balancers
 
-### Step-by-step process
+### What the script does, step-by-step
 1) Clears all instances, security groups and key pairs in the Ohio region
 2) Creates a new key pair and stores it locally on a new `.ssh` folder
 3) Creates a new security group
