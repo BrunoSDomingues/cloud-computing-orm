@@ -25,7 +25,7 @@ class AWSDelete(AWSDefault):
                 # Checks if there are new values, if there are, wait
                 while (
                     len(
-                        self.autoscaling.describe_auto_scaling_group(
+                        self.autoscaling.describe_auto_scaling_groups(
                             AutoScalingGroupNames=[auto_name]
                         )["AutoScalingGroups"]
                     )
