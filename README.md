@@ -1,6 +1,6 @@
 # cloud-computing-orm
 
-Python program used to create a simple task manager that resides in AWS.
+Python script used to set up an environment in AWS for a task manager.
 
 ### AWS Functionalities
 - Usage of tags in order to filter more efficiently
